@@ -1,0 +1,63 @@
+{% extends 'bowlero_backend/modal.html' %}
+
+{% block modal_id %}FoodPanel2Modal1FoodAdd{% endblock %}
+
+{% block form_title %}Add Food{% endblock form_title %}
+
+{% block modal-body_footer %}
+  <form method="get" id="FoodPanel2Modal1FoodAddFormId" class="form-horizontal form-label-left">
+    {% csrf_token %}
+      <div class="modal-body">
+        <div class="form-group">
+          <label class="control-label col-md-3 col-sm-3 col-xs-12" for="add_food_product_name">Product Name<span class="required">*</span>
+          </label>
+          <div class="col-md-6 col-sm-6 col-xs-12">
+            <input id="add_food_product_name" name="add_food_product_name" type="text" class="form-control col-md-12 col-xs-12" style="width:100% " required>
+          </div>
+        </div>
+        <div class="form-group">
+          <label class="control-label col-md-3 col-sm-3 col-xs-12" for="add_food_menu">Menu<span class="required">*</span>
+          </label>
+          <div class="col-md-6 col-sm-6 col-xs-12">
+            <input id="add_food_menu" name="add_food_menu" type="text" class="form-control col-md-12 col-xs-12" style="width:100% " required>
+          </div>
+        </div>
+        <div class="form-group">
+          <label class="control-label col-md-3 col-sm-3 col-xs-12" for="add_food_category">Category<span class="required">*</span>
+          </label>
+          <div class="col-md-6 col-sm-6 col-xs-12">
+            <input id="add_food_category" name="add_food_category" type="text" class="form-control col-md-12 col-xs-12" style="width:100% " required>
+          </div>
+        </div>
+        <div class="form-group">
+          <label class="control-label col-md-3 col-sm-3 col-xs-12" for="add_food_product_num">Product Number
+          </label>
+          <div class="col-md-6 col-sm-6 col-xs-12">
+            <input id="add_food_product_num" name="add_food_product_num" type="text" class="form-control col-md-12 col-xs-12" style="width:100% ">
+          </div>
+        </div>
+        <div class="form-group">
+          <label class="control-label col-md-3 col-sm-3 col-xs-12" for="add_food_start">Start
+          </label>
+          <div class="col-md-6 col-sm-6 col-xs-12">
+            <input id="add_food_start" name="add_food_start" type="text" class="form-control datepicker" placeholder="Select a Date MM/DD/YY" data-inputmask="'mask': '99/99/99'">
+          </div>
+        </div>
+        <div class="form-group">
+          <label class="control-label col-md-3 col-sm-3 col-xs-12" for="add_food_end">End
+          </label>
+          <div class="col-md-6 col-sm-6 col-xs-12">
+            <input id="add_food_end" name="add_food_end" type="text" class="form-control datepicker" placeholder="Select a Date MM/DD/YY" data-inputmask="'mask': '99/99/99'">
+          </div>
+        </div>
+      </div>
+      <div class="modal-footer">
+        <button type="submit" class="btn btn-primary" id="FoodPanel2Modal1FoodAddYes">
+            <span class="glyphicon glyphicon-ok"></span>
+        </button>
+        <button id="FoodPanel2Modal1FoodAddNo" type="button" class="btn btn-danger" data-dismiss="modal">
+            <span class="glyphicon glyphicon-remove"></span>
+        </button>
+      </div>
+  </form>
+{% endblock modal-body_footer %}

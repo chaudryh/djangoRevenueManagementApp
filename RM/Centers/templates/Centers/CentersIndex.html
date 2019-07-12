@@ -1,0 +1,22 @@
+{% extends 'bowlero_backend/dashboard_base.html' %}
+{% load static %}
+
+{% block content_dashboard %}
+<div class="row">
+  {% include 'Centers/CentersPanel2.html' %}
+</div>
+{#<div class="row">#}
+{#  {% include 'Centers/CentersPanel1.html' %}#}
+{#</div>#}
+
+{% endblock content_dashboard %}
+
+{% block foot_js_dashboard %}
+    <script type="text/javascript">
+    {#Version needs to be changes evrytime js is updated. Version variable is defined in settings)#}
+      require(["{% static 'requirejs/config.js' %}?version={{ VERSION }}"], function (config) {
+        require(["{% static 'Centers/js/Centers.js' %}?version={{ VERSION }}"],function(){
+        })
+      });
+    </script>
+{% endblock foot_js_dashboard %}

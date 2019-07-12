@@ -1,0 +1,42 @@
+{% extends 'bowlero_backend/modal.html' %}
+
+{% block modal_id %}FoodPanel2Modal3TierEdit{% endblock %}
+
+{% block form_title %}Edit Tier{% endblock form_title %}
+
+{% block modal-body_footer %}
+  <form method="get" id="FoodPanel2Modal3TierEditFormId" class="form-horizontal form-label-left">
+    {% csrf_token %}
+      <div class="modal-body">
+        <div class="form-group">
+          <label class="control-label col-md-3 col-sm-3 col-xs-12" for="edit_tier_name_old">Old Tier Name<span class="required">*</span>
+          </label>
+          <div class="col-md-6 col-sm-6 col-xs-12">
+            <input type="text" id="edit_tier_name_old" name="edit_tier_name_old" class="form-control col-md-7 col-xs-12" style="width:80% " required>
+          </div>
+        </div>
+        <div class="form-group">
+          <label class="control-label col-md-3 col-sm-3 col-xs-12" for="edit_tier_name_new">New Tier Name<span class="required">*</span>
+          </label>
+          <div class="col-md-6 col-sm-6 col-xs-12">
+            <input type="text" id="edit_tier_name_new" name="edit_tier_name_new" class="form-control col-md-7 col-xs-12" style="width:80% " required>
+          </div>
+        </div>
+        <div class="form-group">
+          <label class="control-label col-md-3 col-sm-3 col-xs-12" for="edit_tier_menu">Menu Name<span class="required">*</span>
+          </label>
+          <div class="col-md-6 col-sm-6 col-xs-12">
+            <input type="text" id="edit_tier_menu" name="edit_tier_menu" class="form-control col-md-7 col-xs-12" style="width:80% " required>
+          </div>
+        </div>
+      </div>
+      <div class="modal-footer">
+        <button type="submit" class="btn btn-primary" id="FoodPanel2Modal3TierEditYes">
+            <span class="glyphicon glyphicon-ok"></span>
+        </button>
+        <button id="FoodPanel2Modal3TierEditNo" type="button" class="btn btn-danger" data-dismiss="modal">
+            <span class="glyphicon glyphicon-remove"></span>
+        </button>
+      </div>
+  </form>
+{% endblock modal-body_footer %}

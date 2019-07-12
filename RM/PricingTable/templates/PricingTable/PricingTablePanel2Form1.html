@@ -1,0 +1,57 @@
+  <form method="post" id="PricingTablePanel2Form1" class="form-horizontal form-label-left" autocomplete="off">
+  {% csrf_token %}
+    <!-- Avoid Chrome autofill -->
+    <input style="display: none">
+    <div class="form-group">
+      <label class="control-label col-md-3 col-sm-3 col-xs-12" for="product">Product<span class="required">*</span>
+      </label>
+      <div class="col-md-4 col-sm-4 col-xs-12">
+        <select id="product" name="product" multiple="multiple" class="select2_multiple form-control" required>
+          <optgroup label="Retail">
+            <option value="108,110,111,113" selected>Retail Bowling</option>
+            <option value="114,115">Retail Shoe</option>
+          </optgroup>
+          <optgroup label="Promos">
+            <option value="2020">Mon Mayh</option>
+            <option value="2030">222 Tue</option>
+            <option value="2040">Colg Nt Wed</option>
+            <option value="2041">Colg Nt Thu</option>
+            <option value="2146481686">Friday 8PM AYCB</option>
+            <option value="2146532909">Friday 9PM AYCB</option>
+            <option value="2146507303">Friday 10PM AYCB</option>
+            <option value="2146481687">Friday 11PM AYCB</option>
+            <option value="2146498449">SATURDAY LATE NIGHT SESSION</option>
+            <option value="2010">SunFun Bowl</option>
+            <option value="2011">SunFun Shoes</option>
+            <option value="2146449490">EARLY BIRD BOWLING</option>
+            <option value="2146451733">UNLIMITED WEDNESDAY</option>
+            <option value="2146448891">SERVICE INDUSTRY NIGHT</option>
+            <option value="2146452976">UNLIMITED LASER TAG</option>
+          </optgroup>
+        </select>
+      </div>
+    </div>
+    <div class="form-group">
+      <label class="control-label col-md-3 col-sm-3 col-xs-12" for="start">Start
+      </label>
+      <div class="col-md-4 col-sm-4 col-xs-12">
+          <input id="start" name="start" type="text" class="form-control datepicker" placeholder="Select a Date MM/DD/YY" data-inputmask="'mask': '99/99/99'">
+      </div>
+    </div>
+    <div class="form-group">
+      <label class="control-label col-md-3 col-sm-3 col-xs-12" for="end">End
+      </label>
+      <div class="col-md-4 col-sm-4 col-xs-12">
+          <input id="end" name="end" type="text" class="form-control datepicker" placeholder="Select a Date MM/DD/YY" data-inputmask="'mask': '99/99/99'">
+      </div>
+    </div>
+    <div class="form-group">
+      <label class="control-label col-md-3 col-sm-3 col-xs-12"></label>
+      <div class="col-md-6 col-sm-6 col-xs-12">
+        <button type="submit" class="btn btn-primary " id="PricingTablePanel2Form1Submit">Refresh</button>
+      </div>
+    </div>
+  </form>
+  <script>
+      var csrf_token = "{{ csrf_token }}"
+  </script>

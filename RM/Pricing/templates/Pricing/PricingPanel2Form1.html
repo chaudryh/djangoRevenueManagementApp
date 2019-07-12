@@ -1,0 +1,82 @@
+  <form method="post" id="PricingPanel2Form1" class="form-horizontal form-label-left" autocomplete="off">
+  {% csrf_token %}
+    <!-- Avoid Chrome autofill -->
+    <input style="display: none">
+    <div class="form-group">
+      <label class="control-label col-md-3 col-sm-3 col-xs-12" for="Product">Product<span class="required">*</span>
+      </label>
+      <div class="col-md-6 col-sm-6 col-xs-12">
+        <select id="product" name="product" class="select2_single form-control col-md-7 col-xs-12" style="width:80% " required>
+          <optgroup label="Retail">
+            <option value="retail bowling" selected>Retail Bowling</option>
+            <option value="retail shoe">Retail Shoe</option>
+          </optgroup>
+          <optgroup label="Promos">
+            <option value="2020">Mon Mayh</option>
+            <option value="2030">222 Tue</option>
+            <option value="2040">Colg Nt Wed</option>
+            <option value="2041">Colg Nt Thu</option>
+            <option value="after party friday">After Party Friday AYCB</option>
+            <option value="2146498449">SATURDAY LATE NIGHT SESSION</option>
+            <option value="2010">SunFun Bowl</option>
+            <option value="2146449490">EARLY BIRD BOWLING</option>
+            <option value="2146451733">UNLIMITED WEDNESDAY</option>
+            <option value="2146448891">SERVICE INDUSTRY NIGHT</option>
+            <option value="2146452976">UNLIMITED LASER TAG</option>
+          </optgroup>
+        </select>
+      </div>
+    </div>
+    <div class="form-group">
+      <label class="control-label col-md-3 col-sm-3 col-xs-12" for="start">Date Range
+      </label>
+      <div class="col-md-3 col-sm-3 col-xs-12">
+          <input id="start" name="start" type="text" class="form-control datepicker" placeholder="Start Date MM/DD/YY" data-inputmask="'mask': '99/99/99'">
+      </div>
+      <div class="col-md-3 col-sm-3 col-xs-12">
+        <input id="end" name="end" type="text" class="form-control datepicker" placeholder="End Date MM/DD/YY" data-inputmask="'mask': '99/99/99'">
+      </div>
+    </div>
+    <div class="form-group" id="form-input-DOW">
+      <label class="control-label col-md-3 col-sm-3 col-xs-12" for="DOW">Day of Week
+      </label>
+      <div class="col-md-6 col-sm-6 col-xs-12">
+        <select id="DOW" name="DOW" multiple="multiple" class="select2_multiple form-control col-md-7 col-xs-12" style="width:80% ">
+          <optgroup label="Weekday">
+            <option value="mon">Monday</option>
+            <option value="tue">Tuesday</option>
+            <option value="wed">Wednesday</option>
+            <option value="thu">Thursday</option>
+          </optgroup>
+          <optgroup label="Weekend">
+            <option value="fri">Friday</option>
+            <option value="sat">Saturday</option>
+            <option value="sun">Sunday</option>
+          </optgroup>
+        </select>
+      </div>
+    </div>
+
+    <div id="PricingPanel2Form1a">
+      {% include 'Pricing/PricingPanel2Form1a.html' %}
+    </div>
+    <div id="PricingPanel2Form1b" hidden>
+      {% include 'Pricing/PricingPanel2Form1b.html' %}
+    </div>
+    <div id="PricingPanel2Form1c" hidden>
+      {% include 'Pricing/PricingPanel2Form1c.html' %}
+    </div>
+    <div id="PricingPanel2Form1AfterPartyFriday" hidden>
+      {% include 'Pricing/PricingPanel2Form1AfterPartyFriday.html' %}
+    </div>
+
+    <div class="form-group">
+      <label class="control-label col-md-3 col-sm-3 col-xs-12"></label>
+      <div class="col-md-6 col-sm-6 col-xs-12">
+        <button type="submit" class="btn btn-primary " id="PricingPanel2Form1Submit">Save</button>
+      </div>
+    </div>
+  </form>
+  <script>
+      var csrf_token = "{{ csrf_token }}"
+  </script>

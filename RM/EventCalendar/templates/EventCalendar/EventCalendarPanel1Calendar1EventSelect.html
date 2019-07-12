@@ -1,0 +1,38 @@
+{% extends 'bowlero_backend/modal.html' %}
+
+{% block modal_id %}EventCalendarPanel1Calendar1EventSelect{% endblock %}
+
+{% block form_title %}Add new event{% endblock form_title %}
+
+{% block modal-body_footer %}
+  <form method="get" id="EventCalendarPanel1Calendar1EventSelectFormId" class="form-horizontal form-label-left">
+    {% csrf_token %}
+      <div class="modal-body">
+        <div class="form-group">
+          <label class="control-label col-md-3 col-sm-3 col-xs-12" for="event_name">Event name<span class="required">*</span>
+          </label>
+          <div class="col-md-6 col-sm-6 col-xs-12">
+            <input id="event_name" name="event_name" type="text" class="form-control col-md-12 col-xs-12" style="width:100% " required>
+          </div>
+        </div>
+        <div class="form-group">
+          <label class="control-label col-md-3 col-sm-3 col-xs-12" for="all_day">All Day<span class="required">*</span>
+          </label>
+          <div class="col-md-6 col-sm-6 col-xs-12">
+            <select id="all_day" name="all_day" class="select2_single form-control col-md-7 col-xs-12" style="width:100%" required>
+              <option value="true" selected>Yes</option>
+              <option value="false">No</option>
+            </select>
+          </div>
+        </div>
+      </div>
+      <div class="modal-footer">
+        <button type="submit" class="btn btn-primary" id="EventCalendarPanel1Calendar1EventSelectYes">
+            <span class="glyphicon glyphicon-ok"></span>
+        </button>
+        <button id="EventCalendarPanel1Calendar1EventSelectNo" type="button" class="btn btn-danger" data-dismiss="modal">
+            <span class="glyphicon glyphicon-remove"></span>
+        </button>
+      </div>
+  </form>
+{% endblock modal-body_footer %}

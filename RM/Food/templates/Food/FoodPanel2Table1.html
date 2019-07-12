@@ -1,0 +1,58 @@
+{% load static %}
+
+<link rel="stylesheet" href="{% static 'bootstrap-table/dist/bootstrap-table.min.css' %}">
+<link rel="stylesheet" href="{% static 'x-editable/bootstrap3-editable/css/bootstrap-editable.css' %}">
+<link rel="stylesheet" href="{% static 'bootstrap-table/src/extensions/group-by-v2/bootstrap-table-group-by.css' %}">
+
+
+<div class="table-container" id="FoodPanel2Table1ContainerId">
+    <div id="FoodPanel2Table1Toolbar">
+{#        <button id="remove" class="btn btn-danger">#}
+{#            <i class="glyphicon glyphicon-remove"></i> Delete#}
+{#        </button>#}
+        <div class="btn-group">
+            <button class="btn btn-default dropdown-toggle" data-toggle="dropdown" type="button">
+                Food <span class="caret"></span>
+            </button>
+            <ul class="dropdown-menu" role="menu">
+                <li role="menuitem"><a id="FoodAdd" class="btn btn-success" style="color: black">Add</a></li>
+                <li role="menuitem"><a id="FoodDelete" class="btn btn-danger" style="color: black">Delete</a></li>
+            </ul>
+        </div>
+        <div class="btn-group">
+            <button class="btn btn-default dropdown-toggle" data-toggle="dropdown" type="button">
+                Menu <span class="caret"></span>
+            </button>
+            <ul class="dropdown-menu" role="menu">
+                <li role="menuitem"><a id="MenuAdd" class="btn btn-success" style="color: black">Add</a></li>
+                <li role="menuitem"><a id="MenuEdit" class="btn btn-primary" style="color: black">Edit</a></li>
+                <li role="menuitem"><a id="MenuDelete" class="btn btn-danger" style="color: black">Delete</a></li>
+            </ul>
+        </div>
+        <div class="btn-group">
+            <button class="btn btn-default dropdown-toggle" data-toggle="dropdown" type="button">
+                Tier <span class="caret"></span>
+            </button>
+            <ul class="dropdown-menu" role="menu">
+                <li role="menuitem"><a id="TierAdd" class="btn btn-success" style="color: black">Add</a></li>
+                <li role="menuitem"><a id="TierEdit" class="btn btn-primary" style="color: black">Edit</a></li>
+                <li role="menuitem"><a id="TierDelete" class="btn btn-danger" style="color: black">Delete</a></li>
+            </ul>
+        </div>
+    </div>
+    <table id="FoodPanel2Table1Id"></table>
+</div>
+
+<style>
+    .detail{
+        display: table-cell;
+    }
+
+    .price{
+
+    }
+
+    .fht-cell, .fht-cell input {
+        min-height: 38px;
+    }
+</style>

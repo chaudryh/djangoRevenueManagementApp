@@ -1,0 +1,24 @@
+{% extends 'bowlero_backend/modal.html' %}
+
+{% block modal_id %}FoodPanel2Modal1FoodDelete{% endblock %}
+
+{% block form_title %}Delete Food{% endblock form_title %}
+
+{% block modal-body_footer %}
+  <form method="get" id="FoodPanel2Modal1FoodDeleteFormId" class="form-horizontal form-label-left">
+    {% csrf_token %}
+      <div class="modal-body">
+        <div class="form-group">
+          Are you sure to remove these selected products from this menu?
+        </div>
+      </div>
+      <div class="modal-footer">
+        <button type="submit" class="btn btn-primary" id="FoodPanel2Modal1FoodDeleteYes">
+            <span class="glyphicon glyphicon-ok"></span>
+        </button>
+        <button id="FoodPanel2Modal1FoodDeleteNo" type="button" class="btn btn-danger" data-dismiss="modal">
+            <span class="glyphicon glyphicon-remove"></span>
+        </button>
+      </div>
+  </form>
+{% endblock modal-body_footer %}

@@ -1,0 +1,35 @@
+{% extends 'bowlero_backend/modal.html' %}
+
+{% block modal_id %}FoodPanel2Modal3TierDelete{% endblock %}
+
+{% block form_title %}Delete Tier{% endblock form_title %}
+
+{% block modal-body_footer %}
+  <form method="get" id="FoodPanel2Modal3TierDeleteFormId" class="form-horizontal form-label-left">
+    {% csrf_token %}
+      <div class="modal-body">
+        <div class="form-group">
+          <label class="control-label col-md-3 col-sm-3 col-xs-12" for="delete_tier_name">Delete Tier Name<span class="required">*</span>
+          </label>
+          <div class="col-md-6 col-sm-6 col-xs-12">
+            <input type="text" id="delete_tier_name" name="delete_tier_name" class="form-control col-md-7 col-xs-12" style="width:80% " required>
+          </div>
+        </div>
+        <div class="form-group">
+          <label class="control-label col-md-3 col-sm-3 col-xs-12" for="delete_tier_menu">Menu<span class="required">*</span>
+          </label>
+          <div class="col-md-6 col-sm-6 col-xs-12">
+            <input type="text" id="delete_tier_menu" name="delete_tier_menu" class="form-control col-md-7 col-xs-12" style="width:80% " required>
+          </div>
+        </div>
+      </div>
+      <div class="modal-footer">
+        <button type="submit" class="btn btn-primary" id="FoodPanel2Modal3TierDeleteYes">
+            <span class="glyphicon glyphicon-ok"></span>
+        </button>
+        <button id="FoodPanel2Modal3TierDeleteNo" type="button" class="btn btn-danger" data-dismiss="modal">
+            <span class="glyphicon glyphicon-remove"></span>
+        </button>
+      </div>
+  </form>
+{% endblock modal-body_footer %}

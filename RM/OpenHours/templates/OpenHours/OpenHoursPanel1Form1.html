@@ -1,0 +1,29 @@
+  <form method="post" id="OpenHoursPanel1Form1" class="form-horizontal form-label-left">
+  {% csrf_token %}
+    <div class="form-group">
+      <label class="control-label col-md-3 col-sm-3 col-xs-12" for="FileType">File Type <span class="required">*</span>
+      </label>
+      <div class="col-md-6 col-sm-6 col-xs-12">
+        <select id="FileType" name="FileType" class="select2_single form-control col-md-7 col-xs-12" style="width:80% " required>
+          <option value="Centers">Centers</option>
+        </select>
+      </div>
+    </div>
+    <div class="form-group">
+      <label class="control-label col-md-3 col-sm-3 col-xs-12" for="FileUpload">Excel Upload<span class="required">*</span>
+      </label>
+      <div class="col-md-8 col-sm-8 col-xs-12">
+        <input id="FileUpload" name="FileUpload" type="file" multiple class="file-loading">
+        <div id="errorBlock" class="help-block"></div>
+      </div>
+    </div>
+    <div class="form-group">
+      <label class="control-label col-md-3 col-sm-3 col-xs-12"></label>
+      <div class="col-md-6 col-sm-6 col-xs-12">
+        <button type="submit" class="btn btn-primary " id="OpenHoursPanel1Form1Submit">Submit</button>
+      </div>
+    </div>
+  </form>
+  <script>
+      var csrf_token = "{{ csrf_token }}"
+  </script>

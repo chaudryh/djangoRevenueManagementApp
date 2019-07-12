@@ -1,0 +1,123 @@
+{% load static %}
+
+<link rel="stylesheet" href="{% static 'bootstrap-table/dist/bootstrap-table.min.css' %}">
+<link rel="stylesheet" href="{% static 'x-editable/bootstrap3-editable/css/bootstrap-editable.css' %}">
+<link rel="stylesheet" href="{% static 'bootstrap-table/src/extensions/group-by-v2/bootstrap-table-group-by.css' %}">
+
+
+<div class="table-container" id="LeagueCenterInfoPanel2Table1ContainerId">
+    <div id="LeagueCenterInfoPanel2Table1Toolbar">
+        {#        <button id="remove" class="btn btn-danger">#}
+        {#            <i class="glyphicon glyphicon-remove"></i> Delete#}
+        {#        </button>#}
+{#        <button id="add" class="btn btn-primary">#}
+{#            <i class="glyphicon glyphicon-plus"></i> Add#}
+{#        </button>#}
+    </div>
+    <table id="LeagueCenterInfoPanel2Table1Id"></table>
+</div>
+
+<style>
+    .detail{
+        display: table-cell;
+    }
+
+    .price{
+
+    }
+
+    .fht-cell, .fht-cell input {
+        min-height: 38px;
+    }
+
+    .fixed-column-center {
+        min-width: 66px;
+        max-width: 66px;
+    }
+
+    .fixed-column-revenue {
+        min-width: 83px;
+        max-width: 83px;
+    }
+    .fixed-column-revenue-transact {
+        min-width: 83px;
+        max-width: 83px;
+    }
+    .fixed-column-revenue-var {
+        min-width: 83px;
+        max-width: 83px;
+    }
+    .fixed-column-weeklyValue {
+        min-width: 120px;
+        max-width: 120px;
+    }
+    .fixed-column-revenue-transact-weekly {
+        min-width: 120px;
+        max-width: 120px;
+    }
+    .fixed-column-revenue-var-weekly {
+        min-width: 120px;
+        max-width: 120px;
+    }
+    .fixed-column-seasonalValue {
+        min-width: 120px;
+        max-width: 120px;
+    }
+    .fixed-column-revenue-transact-seasonal {
+        min-width: 120px;
+        max-width: 120px;
+    }
+    .fixed-column-revenue-var-seasonal {
+        min-width: 120px;
+        max-width: 120px;
+    }
+
+    {# Parent #}
+
+    .fixed-column-center-name {
+        min-width: 109px;
+        max-width: 109px;
+    }
+
+    .fixed-column-region {
+        min-width: 81px;
+        max-width: 81px;
+    }
+
+    .fixed-column-district {
+        min-width: 97px;
+        max-width: 97px;
+    }
+
+    .fixed-column-total-LMA {
+        min-width: 91px;
+        max-width: 91px;
+    }
+
+    .fixed-column-total-Pixel {
+        min-width: 91px;
+        max-width: 91px;
+    }
+
+    {# Child   #}
+    .fixed-column-league-number {
+        min-width: 115px;
+        max-width: 115px;
+    }
+
+    .fixed-column-league-name {
+        min-width: 200px;
+        max-width: 200px;
+    }
+
+    .fixed-column-start {
+        min-width: 87px;
+        max-width: 87px;
+    }
+
+    .fixed-column-end {
+        min-width: 87px;
+        max-width: 87px;
+    }
+
+</style>

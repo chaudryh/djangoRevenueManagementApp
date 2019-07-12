@@ -1,0 +1,33 @@
+  <form method="post" id="FoodPanel1Form1" class="form-horizontal form-label-left">
+  {% csrf_token %}
+{#    <div class="form-group">#}
+{#      <label class="control-label col-md-3 col-sm-3 col-xs-12" for="date">Date<span class="required">*</span>#}
+{#      </label>#}
+{#      <div class="col-md-6 col-sm-6 col-xs-12">#}
+{#          <input id="date" name="date" type="text" class="form-control datepicker" placeholder="Select a Date YYYY-MM-DD" data-inputmask="'mask': '99/99/9999'" style="width:80%" required>#}
+{#      </div>#}
+{#    </div>#}
+    <div class="form-group">
+      <label class="control-label col-md-3 col-sm-3 col-xs-12" for="food_menu">Food Menu<span class="required">*</span>
+      </label>
+      <div class="col-md-6 col-sm-6 col-xs-12">
+        <select id="food_menu" name="food_menu" class="select2_single form-control col-md-7 col-xs-12" style="width:80%" required>
+          <option value="Bowled">Bowled</option>
+          <option value="Bare Bones">Bare Bones</option>
+          <option value="Light">Light</option>
+          <option value="Premium">Premium</option>
+          <option value="Traditional">Traditional</option>
+          <option value="Traditional SW">Traditional SW</option>
+        </select>
+      </div>
+    </div>
+    <div class="form-group">
+      <label class="control-label col-md-3 col-sm-3 col-xs-12"></label>
+      <div class="col-md-6 col-sm-6 col-xs-12">
+        <button type="submit" class="btn btn-primary " id="FoodPanel1Form1Submit">Submit</button>
+      </div>
+    </div>
+  </form>
+  <script>
+      var csrf_token = "{{ csrf_token }}"
+  </script>

@@ -1,0 +1,116 @@
+  <form method="post" id="LeagueCenterInfoPanel1Form1" class="form-horizontal form-label-left" autocomplete="off">
+  {% csrf_token %}
+    <!-- Avoid Chrome autofill -->
+    <input name="email" style="display: none">
+    <div class="form-group">
+      <label class="control-label col-md-3 col-sm-3 col-xs-12" for="type">Type
+      </label>
+      <div class="col-md-6 col-sm-6 col-xs-12">
+        <select id="type" name="type" multiple="multiple" class="select2_multiple form-control" style="width: 100%">
+{#          <option value="0,6" selected>Traditional</option>#}
+{#          <option value="6,12">Schools & Special Needs</option>#}
+{#          <option value="12,18">Merchandise</option>#}
+{#          <option value="18,24">National</option>#}
+{#          <option value="24,30">Social/Bus Dev</option>#}
+{#          <option value="30,36">Tournament</option>#}
+          <option value="all">All</option>
+          <option value="Traditional">Traditional</option>
+          <option value="Promotional/Short Season">Promotional/Short Season</option>
+          <option value="School/Special Needs">School/Special Needs</option>
+          <option value="National League">National League</option>
+          <option value="Tournament">Tournament</option>
+        </select>
+      </div>
+    </div>
+    <div class="form-group">
+      <label class="control-label col-md-3 col-sm-3 col-xs-12" for="subType">Sub Type
+      </label>
+      <div class="col-md-6 col-sm-6 col-xs-12">
+          <select id="subType" name="subType" multiple="multiple" class="select2_multiple form-control" style="width: 100%">
+{#              <option value="0,6" selected>Mixed</option>#}
+{#              <option value="6,12">Men’s</option>#}
+{#              <option value="12,18">Women’s</option>#}
+{#              <option value="18,24">Youth</option>#}
+{#              <option value="24,30">Senior</option>#}
+              <option value="all">All</option>
+              <option value="Mixed">Mixed</option>
+              <option value="Men">Men</option>
+              <option value="Women">Women</option>
+              <option value="Adult/Child">Adult/Child</option>
+              <option value="Youth">Youth</option>
+              <option value="Senior">Senior</option>
+          </select>
+      </div>
+    </div>
+    <div class="form-group">
+      <label class="control-label col-md-3 col-sm-3 col-xs-12" for="DOW">Day of Week
+      </label>
+      <div class="col-md-6 col-sm-6 col-xs-12">
+          <select id="DOW" name="DOW" multiple="multiple" class="select2_multiple form-control" style="width: 100%">
+              <option value="all">All</option>
+              <option value="1">Monday</option>
+              <option value="2">Tuesday</option>
+              <option value="3">Wednesday</option>
+              <option value="4">Thursday</option>
+              <option value="5">Friday</option>
+              <option value="6">Saturday</option>
+              <option value="7">Sunday</option>
+          </select>
+      </div>
+{#      <div class="col-md-3 col-sm-3 col-xs-12">#}
+{#          <select id="dowRange" name="dowRange" class="select2_single form-control">#}
+{#              <option value="intersection" selected>Touching</option>#}
+{#              <option value="specific">Within</option>#}
+{#          </select>#}
+{#      </div>#}
+    </div>
+    <div class="form-group">
+      <label class="control-label col-md-3 col-sm-3 col-xs-12" for="start">Date Range
+      </label>
+      <div class="col-md-3 col-sm-3 col-xs-12">
+          <input id="start" name="start" type="text" class="form-control datepicker" placeholder="Start Date MM/DD/YY" data-inputmask="'mask': '99/99/99'" required>
+      </div>
+      <div class="col-md-3 col-sm-3 col-xs-12">
+          <input id="end" name="end" type="text" class="form-control datepicker" placeholder="End Date MM/DD/YY" data-inputmask="'mask': '99/99/99'" required>
+      </div>
+      <div class="col-md-3 col-sm-3 col-xs-12">
+          <select id="dateRange" name="dateRange" class="select2_single form-control">
+{#              <option value="happen">Happening</option>#}
+              <option value="intersection" selected>Touching</option>
+              <option value="specific">Within</option>
+              <option value="ended">Ended</option>
+          </select>
+      </div>
+    </div>
+    <div class="form-group">
+      <label class="control-label col-md-3 col-sm-3 col-xs-12" for="status">Status
+      </label>
+      <div class="col-md-6 col-sm-6 col-xs-12">
+          <select id="status" name="status" multiple="multiple" class="select2_multiple form-control" style="width:100%">
+              <option value="all">All</option>
+              <option value="Active" selected>Active</option>
+              <option value="Deactivated">Deactivated</option>
+              <option value="Not Floored">Not Floored</option>
+          </select>
+      </div>
+    </div>
+    <div class="form-group">
+      <label class="control-label col-md-3 col-sm-3 col-xs-12" for="distinct">Distinct Only
+      </label>
+      <div class="col-md-6 col-sm-6 col-xs-12">
+          <select id="distinct" name="distinct" class="select2_single form-control" style="width:100%">
+              <option value="True">Yes</option>
+              <option value="False" selected>No</option>
+          </select>
+      </div>
+    </div>
+    <div class="form-group">
+      <label class="control-label col-md-3 col-sm-3 col-xs-12"></label>
+      <div class="col-md-6 col-sm-6 col-xs-12">
+        <button type="submit" class="btn btn-primary " id="LeagueCenterInfoPanel1Form1Submit">Submit</button>
+      </div>
+    </div>
+  </form>
+  <script>
+      var csrf_token = "{{ csrf_token }}"
+  </script>

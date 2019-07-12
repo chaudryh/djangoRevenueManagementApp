@@ -1,0 +1,28 @@
+{% extends 'bowlero_backend/modal.html' %}
+
+{% block modal_id %}FoodPanel2Modal2MenuDelete{% endblock %}
+
+{% block form_title %}Delete Menu{% endblock form_title %}
+
+{% block modal-body_footer %}
+  <form method="get" id="FoodPanel2Modal2MenuDeleteFormId" class="form-horizontal form-label-left">
+    {% csrf_token %}
+      <div class="modal-body">
+        <div class="form-group">
+          <label class="control-label col-md-3 col-sm-3 col-xs-12" for="delete_menu_name">Delete Menu Name<span class="required">*</span>
+          </label>
+          <div class="col-md-6 col-sm-6 col-xs-12">
+            <input type="text" id="delete_menu_name" name="delete_menu_name" class="form-control col-md-7 col-xs-12" style="width:80% " required>
+          </div>
+        </div>
+      </div>
+      <div class="modal-footer">
+        <button type="submit" class="btn btn-primary" id="FoodPanel2Modal2MenuDeleteYes">
+            <span class="glyphicon glyphicon-ok"></span>
+        </button>
+        <button id="FoodPanel2Modal2MenuDeleteNo" type="button" class="btn btn-danger" data-dismiss="modal">
+            <span class="glyphicon glyphicon-remove"></span>
+        </button>
+      </div>
+  </form>
+{% endblock modal-body_footer %}

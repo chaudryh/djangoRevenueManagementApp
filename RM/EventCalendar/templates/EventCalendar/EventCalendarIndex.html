@@ -1,0 +1,18 @@
+{% extends 'bowlero_backend/dashboard_base.html' %}
+{% load static %}
+
+{% block content_dashboard %}
+<div class="row">
+  {% include 'EventCalendar/EventCalendarPanel1.html' %}
+</div>
+
+{% endblock content_dashboard %}
+
+{% block foot_js_dashboard %}
+    <script type="text/javascript">
+      require(["{% static 'requirejs/config.js' %}?version={{ VERSION }}"], function (config) {
+        require(["{% static 'EventCalendar/js/EventCalendar.js' %}?version={{ VERSION }}"],function(){
+        })
+      });
+    </script>
+{% endblock foot_js_dashboard %}

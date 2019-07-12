@@ -1,0 +1,72 @@
+  <form method="post" id="BundlePanel1Form1" class="form-horizontal form-label-left">
+  {% csrf_token %}
+    <div class="form-group" hidden>
+      <label class="control-label col-md-3 col-sm-3 col-xs-12" for="action">Action<span class="required">*</span>
+      </label>
+      <div class="col-md-6 col-sm-6 col-xs-12">
+        <select id="action" name="action" class="select2_single form-control col-md-7 col-xs-12" style="width:80%" required>
+          <option value="bulk pricing" selected>Bulk pricing</option>
+          <option value="add category">Add Category</option>
+          <option value="remove category">Remove Category</option>
+        </select>
+      </div>
+    </div>
+
+    <div class="form-group">
+      <label class="control-label col-md-3 col-sm-3 col-xs-12" for="price" >Price<span class="required">*</span>
+      </label>
+      <div class="col-md-1 col-sm-1 col-xs-12">
+        <select id="price-symbol" name="price-symbol" class=" form-control col-md-12 col-xs-12" style="width:100% " required>
+          <option value="plus">+</option>
+          <option value="minus">-</option>
+          <option value="equal">=</option>
+        </select>
+      </div>
+      <div class="col-md-1 col-sm-1 col-xs-12">
+        <input id="price" name="price" type="text" class="form-control col-md-12 col-xs-12" style="width:100% ">
+      </div>
+      <div class="col-md-1 col-sm-1 col-xs-12">
+        <select id="price-unit" name="price-unit" class="form-control col-md-12 col-xs-12" style="width:100% " required>
+          <option value="dollar">$</option>
+          <option value="percent">%</option>
+        </select>
+      </div>
+    </div>
+    <div class="form-group">
+      <label class="control-label col-md-3 col-sm-3 col-xs-12" for="start">Date Range
+      </label>
+      <div class="col-md-3 col-sm-3 col-xs-12">
+          <input id="start" name="start" type="text" class="form-control datepicker" placeholder="Start Date YYYY-MM-DD" data-inputmask="'mask': '99/99/9999'">
+      </div>
+      <div class="col-md-3 col-sm-3 col-xs-12">
+        <input id="end" name="end" type="text" class="form-control datepicker" placeholder="End Date YYYY-MM-DD" data-inputmask="'mask': '99/99/9999'">
+      </div>
+    </div>
+    <div class="form-group" id="form-input-DOW">
+      <label class="control-label col-md-3 col-sm-3 col-xs-12" for="tiers">Tiers
+      </label>
+      <div class="col-md-6 col-sm-6 col-xs-12">
+        <select id="tiers" name="tiers" multiple="multiple" class="select2_multiple form-control col-md-7 col-xs-12" style="width:80% ">
+            <option value="1">1</option>
+            <option value="1.5">1.5</option>
+            <option value="2">2</option>
+            <option value="3">3</option>
+            <option value="4">4</option>
+            <option value="4.5">4.5</option>
+            <option value="5">5</option>
+            <option value="6">6</option>
+            <option value="7">7</option>
+        </select>
+      </div>
+    </div>
+    <div class="form-group">
+      <label class="control-label col-md-3 col-sm-3 col-xs-12"></label>
+      <div class="col-md-6 col-sm-6 col-xs-12">
+        <button type="submit" class="btn btn-primary " id="BundlePanel1Form1aSubmit">Submit</button>
+      </div>
+    </div>
+
+  </form>
+  <script>
+      var csrf_token = "{{ csrf_token }}"
+  </script>

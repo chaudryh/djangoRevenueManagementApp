@@ -1,0 +1,30 @@
+{% extends 'bowlero_backend/panel.html' %}
+{% block panel_title %}Food Menu Pricing{% endblock panel_title %}
+
+{% block panel_content %}
+    <div>
+      {% include 'Food/FoodPanel2Table1.html' %}
+    </div>
+    <div class="clearfix"></div>
+    <br/>
+
+    {#  Food  #}
+    {% include 'Food/FoodPanel2Modal1FoodAdd.html' %}
+    <div id="FoodPanel2Modal1FoodAddCreate" data-toggle="modal" data-target="#FoodPanel2Modal1FoodAdd"></div>
+    {% include 'Food/FoodPanel2Modal1FoodDelete.html' %}
+    <div id="FoodPanel2Modal1FoodDeleteCreate" data-toggle="modal" data-target="#FoodPanel2Modal1FoodDelete"></div>
+    {#  Menu  #}
+    {% include 'Food/FoodPanel2Modal2MenuAdd.html' %}
+    <div id="FoodPanel2Modal2MenuAddCreate" data-toggle="modal" data-target="#FoodPanel2Modal2MenuAdd"></div>
+    {% include 'Food/FoodPanel2Modal2MenuEdit.html' %}
+    <div id="FoodPanel2Modal2MenuEditCreate" data-toggle="modal" data-target="#FoodPanel2Modal2MenuEdit"></div>
+    {% include 'Food/FoodPanel2Modal2MenuDelete.html' %}
+    <div id="FoodPanel2Modal2MenuDeleteCreate" data-toggle="modal" data-target="#FoodPanel2Modal2MenuDelete"></div>
+    {#  Tier  #}
+    {% include 'Food/FoodPanel2Modal3TierAdd.html' %}
+    <div id="FoodPanel2Modal3TierAddCreate" data-toggle="modal" data-target="#FoodPanel2Modal3TierAdd"></div>
+    {% include 'Food/FoodPanel2Modal3TierEdit.html' %}
+    <div id="FoodPanel2Modal3TierEditCreate" data-toggle="modal" data-target="#FoodPanel2Modal3TierEdit"></div>
+    {% include 'Food/FoodPanel2Modal3TierDelete.html' %}
+    <div id="FoodPanel2Modal3TierDeleteCreate" data-toggle="modal" data-target="#FoodPanel2Modal3TierDelete"></div>
+{% endblock panel_content %}

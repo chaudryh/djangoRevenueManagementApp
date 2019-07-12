@@ -1,0 +1,16 @@
+{% extends 'bowlero_backend/panel.html' %}
+{% block panel_title %}Holiday Calendar{% endblock panel_title %}
+
+{% block panel_content %}
+    <div>
+      {% include 'EventCalendar/EventCalendarPanel1Calendar1.html' %}
+    </div>
+    <div class="clearfix"></div>
+    <br/>
+
+    {% include 'EventCalendar/EventCalendarPanel1Calendar1EventClick.html' %}
+    <div id="EventCalendarPanel1Calendar1EventClickCreate" data-toggle="modal" data-target="#EventCalendarPanel1Calendar1EventClick"></div>
+    {% include 'EventCalendar/EventCalendarPanel1Calendar1EventSelect.html' %}
+    <div id="EventCalendarPanel1Calendar1EventSelectCreate" data-toggle="modal" data-target="#EventCalendarPanel1Calendar1EventSelect"></div>
+
+{% endblock panel_content %}

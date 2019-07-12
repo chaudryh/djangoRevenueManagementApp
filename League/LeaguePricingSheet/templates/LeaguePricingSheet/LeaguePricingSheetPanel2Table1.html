@@ -1,0 +1,32 @@
+{% load static %}
+
+<link rel="stylesheet" href="{% static 'bootstrap-table/dist/bootstrap-table.min.css' %}">
+<link rel="stylesheet" href="{% static 'x-editable/bootstrap3-editable/css/bootstrap-editable.css' %}">
+<link rel="stylesheet" href="{% static 'bootstrap-table/src/extensions/group-by-v2/bootstrap-table-group-by.css' %}">
+
+
+<div class="table-container" id="LeaguePricingSheetPanel2Table1ContainerId">
+    <div id="LeaguePricingSheetPanel2Table1Toolbar">
+        {#        <button id="remove" class="btn btn-danger">#}
+        {#            <i class="glyphicon glyphicon-remove"></i> Delete#}
+        {#        </button>#}
+{#        <button id="add" class="btn btn-primary">#}
+{#            <i class="glyphicon glyphicon-plus"></i> Add#}
+{#        </button>#}
+    </div>
+    <table id="LeaguePricingSheetPanel2Table1Id"></table>
+</div>
+
+<style>
+    .detail{
+        display: table-cell;
+    }
+
+    .price{
+
+    }
+
+    .fht-cell, .fht-cell input {
+        min-height: 38px;
+    }
+</style>
