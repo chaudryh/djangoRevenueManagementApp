@@ -1,0 +1,42 @@
+  <form method="post" id="EventPromoPanel1Form1" class="form-horizontal form-label-left" autocomplete="off">
+  {% csrf_token %}
+    <!-- Avoid Chrome autofill -->
+    <input name="email" style="display: none">
+    <div class="form-group">
+      <label class="control-label col-md-3 col-sm-3 col-xs-12" for="start">Start
+      </label>
+      <div class="col-md-6 col-sm-6 col-xs-12">
+          <input id="start" name="start" type="text" class="form-control datepicker" placeholder="Select a Date MM/DD/YY" data-inputmask="'mask': '99/99/99'" style="width:80%">
+      </div>
+    </div>
+    <div class="form-group">
+      <label class="control-label col-md-3 col-sm-3 col-xs-12" for="end">End
+      </label>
+      <div class="col-md-6 col-sm-6 col-xs-12">
+          <input id="end" name="end" type="text" class="form-control datepicker" placeholder="Select a Date MM/DD/YY" data-inputmask="'mask': '99/99/99'" style="width:80%">
+      </div>
+    </div>
+    <div class="form-group">
+      <label class="control-label col-md-3 col-sm-3 col-xs-12" for="eff_start">Effective Start
+      </label>
+      <div class="col-md-6 col-sm-6 col-xs-12">
+          <input id="eff_start" name="eff_start" type="text" class="form-control datepicker" placeholder="Select a Date MM/DD/YY" data-inputmask="'mask': '99/99/99'" style="width:80%">
+      </div>
+    </div>
+    <div class="form-group">
+      <label class="control-label col-md-3 col-sm-3 col-xs-12" for="eff_end">Effective End
+      </label>
+      <div class="col-md-6 col-sm-6 col-xs-12">
+          <input id="eff_end" name="eff_end" type="text" class="form-control datepicker" placeholder="Select a Date MM/DD/YY" data-inputmask="'mask': '99/99/99'" style="width:80%">
+      </div>
+    </div>
+    <div class="form-group">
+      <label class="control-label col-md-3 col-sm-3 col-xs-12"></label>
+      <div class="col-md-6 col-sm-6 col-xs-12">
+        <button type="submit" class="btn btn-primary " id="EventPromoPanel1Form1Submit">Submit</button>
+      </div>
+    </div>
+  </form>
+  <script>
+      var csrf_token = "{{ csrf_token }}"
+  </script>

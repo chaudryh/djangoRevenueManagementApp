@@ -1,0 +1,43 @@
+  <form method="post" id="EventPricingTablePanel2Form1" class="form-horizontal form-label-left" autocomplete="off">
+  {% csrf_token %}
+    <!-- Avoid Chrome autofill -->
+    <input style="display: none">
+    <div class="form-group">
+      <label class="control-label col-md-3 col-sm-3 col-xs-12" for="product">Product<span class="required">*</span>
+      </label>
+      <div class="col-md-4 col-sm-4 col-xs-12">
+        <select id="product" name="product" multiple="multiple" class="select2_multiple form-control" required>
+          <optgroup label="Non-Package">
+            <option value="3001,3002,3003,3004,3005,3006,3007" selected>Lane</option>
+            <option value="3101">Shoe</option>
+          </optgroup>
+          <optgroup label="Package">
+            <option value="3201,3202,3203,3204,3205,3206,3207,3208,3209">Basic Package</option>
+          </optgroup>
+        </select>
+      </div>
+    </div>
+    <div class="form-group">
+      <label class="control-label col-md-3 col-sm-3 col-xs-12" for="start">Start
+      </label>
+      <div class="col-md-4 col-sm-4 col-xs-12">
+          <input id="start" name="start" type="text" class="form-control datepicker" placeholder="Select a Date MM/DD/YY" data-inputmask="'mask': '99/99/99'">
+      </div>
+    </div>
+    <div class="form-group">
+      <label class="control-label col-md-3 col-sm-3 col-xs-12" for="end">End
+      </label>
+      <div class="col-md-4 col-sm-4 col-xs-12">
+          <input id="end" name="end" type="text" class="form-control datepicker" placeholder="Select a Date MM/DD/YY" data-inputmask="'mask': '99/99/99'">
+      </div>
+    </div>
+    <div class="form-group">
+      <label class="control-label col-md-3 col-sm-3 col-xs-12"></label>
+      <div class="col-md-6 col-sm-6 col-xs-12">
+        <button type="submit" class="btn btn-primary " id="EventPricingTablePanel2Form1Submit">Refresh</button>
+      </div>
+    </div>
+  </form>
+  <script>
+      var csrf_token = "{{ csrf_token }}"
+  </script>

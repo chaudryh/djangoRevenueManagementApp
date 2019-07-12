@@ -1,0 +1,38 @@
+  {% for product_id, product_name in  event_bowling_product_tuple%}
+    <div class="form-group">
+      <label class="control-label col-md-3 col-sm-3 col-xs-12" for="{{ product_id }}-price">{{ product_name }}
+      </label>
+      <div class="col-md-1 col-sm-1 col-xs-12">
+        <select id="{{ product_id }}-price-symbol" name="{{ product_id }}-price-symbol" class=" form-control col-md-12 col-xs-12" style="width:100% " required>
+          <option value="plus">+</option>
+          <option value="minus">-</option>
+          <option value="equal">=</option>
+        </select>
+      </div>
+      <div class="col-md-1 col-sm-1 col-xs-12">
+        <input id="{{ product_id }}-price" name="{{ product_id }}-price" type="text" class="form-control col-md-12 col-xs-12" style="width:100% ">
+      </div>
+      <div class="col-md-1 col-sm-1 col-xs-12">
+        <select id="{{ product_id }}-price-unit" name="{{ product_id }}-price-unit" class="form-control col-md-12 col-xs-12" style="width:100% " required>
+          <option value="dollar">$</option>
+          <option value="percent">%</option>
+        </select>
+      </div>
+      <div class="col-md-2 col-sm-2 col-xs-12">
+        <select id="{{ product_id }}-price-base" name="{{ product_id }}-price-base" class=" form-control col-md-12 col-xs-12" style="width:100% " required>
+          {% for product_id_opt, product_name_opt in  event_bowling_product_tuple%}
+              <option value="{{ product_id_opt }}" {% if product_id == product_id_opt  %}selected="selected"{% endif %}>{{ product_name_opt }}</option>
+          {% endfor %}
+        </select>
+      </div>
+    </div>
+  {% endfor %}
+
+{#  <div class="form-group">#}
+{#    <label class="control-label col-md-3 col-sm-3 col-xs-12"></label>#}
+{#    <span style="color: red" class="col-md-6 col-sm-6 col-xs-12 text-left">#}
+{#      Warning: <br/>#}
+{#      ① Premium or Prime Price Must Be >= Non Prime Price<br/>#}
+{#      ② Premium Price Must be >= Prime Price#}
+{#    </span>#}
+{#  </div>#}

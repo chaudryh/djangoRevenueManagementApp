@@ -1,0 +1,21 @@
+  <form method="post" id="EventPriceByCenterTestPanel1Form1" class="form-horizontal form-label-left">
+  {% csrf_token %}
+    <div class="form-group">
+      <label class="control-label col-md-3 col-sm-3 col-xs-12" for="product">Product<span class="required">*</span>
+      </label>
+      <div class="col-md-6 col-sm-6 col-xs-12">
+        <select id="product" name="product" class="select2_single form-control col-md-7 col-xs-12" style="width:80% " required>
+          <option value="1" selected>Arcade Room (ROOM ONLY)</option>
+        </select>
+      </div>
+    </div>
+    <div class="form-group">
+      <label class="control-label col-md-3 col-sm-3 col-xs-12"></label>
+      <div class="col-md-6 col-sm-6 col-xs-12">
+        <button type="submit" class="btn btn-primary " id="EventPriceByCenterTestPanel1Form1Submit">Submit</button>
+      </div>
+    </div>
+  </form>
+  <script>
+      var csrf_token = "{{ csrf_token }}"
+  </script>

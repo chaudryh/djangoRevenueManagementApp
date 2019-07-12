@@ -1,0 +1,48 @@
+  <form method="post" id="EventAllocationPanel1Form1" class="form-horizontal form-label-left">
+  {% csrf_token %}
+    <div class="form-group">
+      <label class="control-label col-md-3 col-sm-3 col-xs-12" for="group">Group<span class="required">*</span>
+      </label>
+      <div class="col-md-6 col-sm-6 col-xs-12">
+        <select id="group" name="group" class="select2_single form-control col-md-7 col-xs-12" style="width:80% " required>
+          <option value="Kids" selected>Kids</option>
+        </select>
+      </div>
+    </div>
+    <div class="form-group">
+      <label class="control-label col-md-3 col-sm-3 col-xs-12" for="subGroup">Sub Group<span class="required">*</span>
+      </label>
+      <div class="col-md-6 col-sm-6 col-xs-12">
+          <select id="subGroup" name="subGroup" class="select2_single form-control col-md-7 col-xs-12" style="width:80% " required>
+              <option value="Traditional w/o Arcade Cards or w/ tokens" selected>Traditional w/o Arcade Cards or w/ tokens</option>
+          </select>
+      </div>
+    </div>
+    <div class="form-group">
+      <label class="control-label col-md-3 col-sm-3 col-xs-12" for="product">Product<span class="required">*</span>
+      </label>
+      <div class="col-md-6 col-sm-6 col-xs-12">
+          <select id="product" name="product" class="select2_single form-control col-md-7 col-xs-12" style="width:80% " required>
+              <option value="Unbelieva-Bowl" selected>Unbelieva-Bowl</option>
+          </select>
+      </div>
+    </div>
+    <div class="form-group">
+      <label class="control-label col-md-3 col-sm-3 col-xs-12" for="tier">Tier<span class="required">*</span>
+      </label>
+      <div class="col-md-6 col-sm-6 col-xs-12">
+          <select id="tier" name="tier" class="select2_single form-control col-md-7 col-xs-12" style="width:80% " required>
+              <option value="All" selected>All</option>
+          </select>
+      </div>
+    </div>
+    <div class="form-group">
+      <label class="control-label col-md-3 col-sm-3 col-xs-12"></label>
+      <div class="col-md-6 col-sm-6 col-xs-12">
+        <button type="submit" class="btn btn-primary " id="EventAllocationPanel1Form1Submit">Submit</button>
+      </div>
+    </div>
+  </form>
+  <script>
+      var csrf_token = "{{ csrf_token }}"
+  </script>

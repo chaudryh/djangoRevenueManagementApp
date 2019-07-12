@@ -1,0 +1,27 @@
+{% extends 'bowlero_backend/dashboard_base.html' %}
+{% load static %}
+
+{% block content_dashboard %}
+{#<div class="row">#}
+{#  {% include 'EventOverviewTest/EventOverviewTestPanel2.html' %}#}
+{#</div>#}
+<div class="row">
+  {% include 'EventOverviewTest/EventOverviewTestPanel1.html' %}
+</div>
+    <div class="row">
+  {% include 'EventOverviewTest/EventOverviewTestPanel2.html' %}
+</div>
+    <div class="row">
+  {% include 'EventOverviewTest/EventOverviewTestPanel3.html' %}
+</div>
+
+{% endblock content_dashboard %}
+
+{% block foot_js_dashboard %}
+    <script type="text/javascript">
+      require(["{% static 'requirejs/config.js' %}?version={{ VERSION }}"], function (config) {
+        require(["{% static 'EventOverviewTest/js/EventOverviewTest.js' %}?version={{ VERSION }}"],function(){
+        })
+      });
+    </script>
+{% endblock foot_js_dashboard %}

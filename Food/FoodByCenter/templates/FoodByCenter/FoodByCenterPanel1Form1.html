@@ -1,0 +1,89 @@
+  <form method="post" id="FoodByCenterPanel1Form1" class="form-horizontal form-label-left" autocomplete="off">
+  {% csrf_token %}
+    <!-- Avoid Chrome autofill -->
+    <input style="display: none">
+    <div class="form-group">
+      <label class="control-label col-md-3 col-sm-3 col-xs-12" for="district">District
+      </label>
+      <div class="col-md-6 col-sm-6 col-xs-12">
+          <select id="district" name="district" multiple="multiple" class="select2_multiple form-control col-md-7 col-xs-12" style="width:80% ">
+              <option value="all">All</option>
+          </select>
+      </div>
+    </div>
+    <div class="form-group">
+      <label class="control-label col-md-3 col-sm-3 col-xs-12" for="region">Region
+      </label>
+      <div class="col-md-6 col-sm-6 col-xs-12">
+          <select id="region" name="region" multiple="multiple" class="select2_multiple form-control col-md-7 col-xs-12" style="width:80% ">
+              <option value="all">All</option>
+          </select>
+      </div>
+    </div>
+    <div class="form-group">
+      <label class="control-label col-md-3 col-sm-3 col-xs-12" for="center_id">Center
+      </label>
+      <div class="col-md-6 col-sm-6 col-xs-12">
+          <select id="center_id" name="center_id" multiple="multiple" class="select2_multiple form-control col-md-7 col-xs-12" style="width:80% ">
+              <option value="all">All</option>
+          </select>
+      </div>
+    </div>
+    <div class="form-group">
+      <label class="control-label col-md-3 col-sm-3 col-xs-12" for="menu_id">Menu<span class="required">*</span>
+      </label>
+      <div class="col-md-6 col-sm-6 col-xs-12">
+        <select id="menu_id" name="menu_id" class="select2_single form-control col-md-7 col-xs-12" style="width:80%" required>
+            <option value="1">Competitive</option>
+        </select>
+      </div>
+    </div>
+    <div class="form-group">
+      <label class="control-label col-md-3 col-sm-3 col-xs-12" for="category">Category
+      </label>
+      <div class="col-md-6 col-sm-6 col-xs-12">
+          <select id="category" name="category" multiple="multiple" class="select2_multiple form-control col-md-7 col-xs-12" style="width:80% ">
+              <option value="all">All</option>
+          </select>
+      </div>
+    </div>
+    <div class="form-group">
+      <label class="control-label col-md-3 col-sm-3 col-xs-12" for="start">Date Range
+      </label>
+      <div class="col-md-3 col-sm-3 col-xs-12">
+          <input id="start" name="start" type="text" class="form-control datepicker" placeholder="Start Date MM/DD/YY" data-inputmask="'mask': '99/99/99'" required>
+      </div>
+      <div class="col-md-3 col-sm-3 col-xs-12">
+        <input id="end" name="end" type="text" class="form-control datepicker" placeholder="End Date MM/DD/YY" data-inputmask="'mask': '99/99/99'">
+      </div>
+    </div>
+    <div class="form-group">
+      <label class="control-label col-md-3 col-sm-3 col-xs-12" for="price">Price
+      </label>
+      <div class="col-md-1 col-sm-1 col-xs-12">
+        <select id="price-symbol" name="price-symbol" class=" form-control col-md-12 col-xs-12" style="width:100% " required>
+          <option value="plus">+</option>
+          <option value="minus">-</option>
+          <option value="equal">=</option>
+        </select>
+      </div>
+      <div class="col-md-1 col-sm-1 col-xs-12">
+        <input id="price" name="price" type="text" class="form-control col-md-12 col-xs-12" style="width:100% ">
+      </div>
+      <div class="col-md-1 col-sm-1 col-xs-12">
+        <select id="price-unit" name="price-unit" class="form-control col-md-12 col-xs-12" style="width:100% " required>
+          <option value="dollar">$</option>
+          <option value="percent">%</option>
+        </select>
+      </div>
+    </div>
+    <div class="form-group">
+      <label class="control-label col-md-3 col-sm-3 col-xs-12"></label>
+      <div class="col-md-6 col-sm-6 col-xs-12">
+        <button type="submit" class="btn btn-primary " id="FoodByCenterPanel1Form1Submit">Submit</button>
+      </div>
+    </div>
+  </form>
+  <script>
+      var csrf_token = "{{ csrf_token }}"
+  </script>

@@ -1,0 +1,89 @@
+  <form method="post" id="EventRMPSTestPanel1Form1" class="form-horizontal form-label-left">
+  {% csrf_token %}
+    <div class="form-group">
+      <div class="col-md-1 col-sm-1 col-xs-12"></div>
+      <label class="control-label col-md-2 col-sm-2 col-xs-12" for="sale_region">Sales Region
+      </label>
+      <div class="col-md-4 col-sm-4 col-xs-12">
+          <select id="sale_region" name="sale_region" multiple="multiple" class="select2_multiple form-control" style="width: 100%">
+              <option value="all">All</option>
+          </select>
+      </div>
+    </div>
+    <div class="form-group">
+      <label class="control-label col-md-3 col-sm-3 col-xs-12" for="territory">Territory
+      </label>
+      <div class="col-md-4 col-sm-4 col-xs-12">
+          <select id="territory" name="territory" multiple="multiple" class="select2_multiple form-control" style="width: 100%">
+              <option value="all">All</option>
+          </select>
+      </div>
+    </div>
+    <div class="form-group">
+      <label class="control-label col-md-3 col-sm-3 col-xs-12" for="center_id">Center
+      </label>
+      <div class="col-md-4 col-sm-4 col-xs-12">
+          <select id="center_id" name="center_id" multiple="multiple" class="select2_multiple form-control" style="width: 100%">
+              <option value="all">All</option>
+          </select>
+      </div>
+    </div>
+{#    <div class="form-group">#}
+{#      <label class="control-label col-md-3 col-sm-3 col-xs-12" for="center_name">Center Name#}
+{#      </label>#}
+{#      <div class="col-md-6 col-sm-6 col-xs-12">#}
+{#          <select id="center_name" name="center_name" multiple="multiple" class="select2_multiple form-control col-md-7 col-xs-12" style="width:80% ">#}
+{#              <option value="all">All</option>#}
+{#          </select>#}
+{#      </div>#}
+{#    </div>#}
+    <div class="form-group">
+      <label class="control-label col-md-3 col-sm-3 col-xs-12" for="columns">Products
+      </label>
+      <div class="col-md-4 col-sm-4 col-xs-12">
+          <select id="columns" name="columns" multiple="multiple" class="select2_multiple form-control" style="width: 100%">
+              <option value="all">All</option>
+              <option value="Bowling Tier">Bowling Tier</option>
+              <option value="LANE RENTAL IS FOR  2 HOURS">LANE RENTAL IS FOR  2 HOURS</option>
+              <option value="LANE RENTAL IS FOR  2.5 HOURS">LANE RENTAL IS FOR  2.5 HOURS</option>
+              <option value="LANE RENTAL IS FOR  3 HOURS">LANE RENTAL IS FOR  3 HOURS</option>
+              <option value="Shoe Rental">Shoe Rental</option>
+              <option value="NYE Ball Drop">NYE Ball Drop</option>
+              <option value="NYE Family">NYE Family</option>
+              <option value="Holiday Lane Rental 2.5 Hours">Holiday Lane Rental 2.5 Hours</option>
+              <option value="HOLIDAY PARTIES 2 Hours Bowling incl Shoe Rental">HOLIDAY PARTIES 2 Hours Bowling incl Shoe Rental</option>
+              <option value="The Ultimate Holiday Feast">The Ultimate Holiday Feast</option>
+              <option value="Adult Packages">Adult Packages</option>
+              <option value="Teen Packages *Arcade">Teen Packages *Arcade</option>
+              <option value="Teen Parent Plate">Teen Parent Plate</option>
+              <option value="Teen Pampered Parent * Arcade">Teen Pampered Parent * Arcade</option>
+              <option value="Kids Birthday *Arcade">Kids Birthday *Arcade</option>
+              <option value="Kids Parent Plate">Kids Parent Plate</option>
+              <option value="Kids Pampered Parent">Kids Pampered Parent</option>
+              <option value="Mega/Gamerz">Mega/Gamerz</option>
+              <option value="Mega/Gamerz Pampered Parent">Mega/Gamerz Pampered Parent</option>
+              <option value="Mega/Gamerz Parent Plate">Mega/Gamerz Parent Plate</option>
+              <option value="Arcade">Arcade</option>
+              <option value="Unlimited Arcade">Unlimited Arcade</option>
+              <option value="Core Catering">Core Catering</option>
+              <option value="Daycare/Camp *Arcade">Daycare/Camp *Arcade</option>
+              <option value="Liquor">Liquor</option>
+              <option value="JA Packages">JA Packages</option>
+              <option value="Awesome Package 4 Hours">Awesome Package 4 Hours</option>
+              <option value="Epic Package 6 Hours">Epic Package 6 Hours</option>
+          </select>
+      </div>
+      <div class="col-md-3 col-sm-3 col-xs-12">
+        <button type="submit" class="btn btn-primary " id="EventRMPSPanel1Form1Submit">Submit</button>
+      </div>
+    </div>
+{#    <div class="form-group">#}
+{#      <label class="control-label col-md-3 col-sm-3 col-xs-12"></label>#}
+{#      <div class="col-md-6 col-sm-6 col-xs-12">#}
+{#        <button type="submit" class="btn btn-primary" id="EventRMPSPanel1Form1Submit">Submit</button>#}
+{#      </div>#}
+{#    </div>#}
+  </form>
+  <script>
+      var csrf_token = "{{ csrf_token }}"
+  </script>

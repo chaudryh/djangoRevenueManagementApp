@@ -1,0 +1,33 @@
+  <form method="post" id="EventOverviewTestPanel1Form1" class="form-horizontal form-label-left" autocomplete="off">
+  {% csrf_token %}
+    <!-- Avoid Chrome autofill -->
+    <input name="email" style="display: none">
+    <div class="form-group">
+      <label class="control-label col-md-3 col-sm-3 col-xs-12" for="district">Sales Region
+      </label>
+      <div class="col-md-6 col-sm-6 col-xs-12">
+          <select id="sale_region" name="sale_region" multiple="multiple" class="select2_multiple form-control col-md-7 col-xs-12" style="width:80% ">
+              <option value="all">All</option>
+          </select>
+      </div>
+    </div>
+    <div class="form-group">
+      <label class="control-label col-md-3 col-sm-3 col-xs-12" for="region">Territory
+      </label>
+      <div class="col-md-6 col-sm-6 col-xs-12">
+          <select id="territory" name="territory" multiple="multiple" class="select2_multiple form-control col-md-7 col-xs-12" style="width:80% ">
+              <option value="all">All</option>
+          </select>
+      </div>
+    </div>
+    <div class="form-group">
+      <label class="control-label col-md-3 col-sm-3 col-xs-12"></label>
+      <div class="col-md-6 col-sm-6 col-xs-12">
+        <button type="submit" class="btn btn-primary " id="EventOverviewTestPanel1Form1Submit">Submit</button>
+      </div>
+    </div>
+  </form>
+  <script>
+      var csrf_token = "{{ csrf_token }}"
+  </script>
+

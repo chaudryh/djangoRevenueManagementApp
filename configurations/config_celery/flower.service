@@ -1,0 +1,14 @@
+[Unit]
+Description=Flower Service
+After=network.target
+
+[Service]
+Type=forking
+User=atu
+Group=atu
+EnvironmentFile=/home/atu/projects/celery_test1/celery
+WorkingDirectory=/home/atu/projects/celery
+ExecStart=/bin/sh -c 'flower -A bowlero_backend --port=8000'
+
+[Install]
+WantedBy=multi-user.target

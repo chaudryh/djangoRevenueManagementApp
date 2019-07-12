@@ -1,0 +1,23 @@
+{#{% extends 'bowlero_backend/panel.html' %}#}
+{#{% block panel_title %}RMPS Table{% endblock panel_title %}#}
+{##}
+{#{% block panel_content %}#}
+{#    <div>#}
+{#      {% include 'EventRMPS/EventRMPSPanel2Table1.html' %}#}
+{#    </div>#}
+{#    <div class="clearfix"></div>#}
+{#    <br/>#}
+{#{% endblock panel_content %}#}
+
+
+<div {% block panel_size %}class="col-md-12 col-sm-12 col-xs-12"{% endblock panel_size %}>
+  <div class="x_panel">
+    <div class="x_content">
+        <div>
+          {% include 'EventRMPS/EventRMPSPanel2Table1.html' %}
+        </div>
+        <div class="clearfix"></div>
+        <br/>
+    </div>
+  </div>
+</div>

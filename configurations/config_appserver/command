@@ -1,0 +1,20 @@
+//root
+sudo su root
+//add usr 
+adduser apache
+// install epel
+yum install epel-release
+// update yum
+yum update
+// Compilers and related tools:
+yum groupinstall -y "development tools"
+// Libraries needed during compilation to enable all features of Python:
+yum install -y zlib-devel bzip2-devel openssl-devel ncurses-devel sqlite-devel readline-devel tk-devel gdbm-devel db4-devel libpcap-devel xz-devel expat-devel
+// set-up package
+yum install -y  gcc gcc-c++ make git patch nano wget libffi-devel htop python36 python36-devel httpd httpd-devel unixODBC-devel
+
+source /home/webapp/.venv/bowlero_backend/bin/activate
+
+
+
+

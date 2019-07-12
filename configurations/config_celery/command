@@ -1,0 +1,20 @@
+//circus
+circusd --daemon circus_local.ini
+circusd --daemon circus.ini
+
+//circusctl
+circusctl
+//reload
+reloadconfig
+reload
+restart
+
+//pid info
+ps -p 41612
+ps -aux | less
+ps -u arthurtu
+
+//port info
+fuser 8080/tcp
+// kill port
+fuser -k 8080/tcp

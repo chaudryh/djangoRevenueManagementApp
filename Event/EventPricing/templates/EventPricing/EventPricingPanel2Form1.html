@@ -1,0 +1,72 @@
+  <form method="post" id="EventPricingPanel2Form1" class="form-horizontal form-label-left" autocomplete="off">
+  {% csrf_token %}
+    <!-- Avoid Chrome autofill -->
+    <input style="display: none">
+    <div class="form-group">
+      <label class="control-label col-md-3 col-sm-3 col-xs-12" for="Product">Product<span class="required">*</span>
+      </label>
+      <div class="col-md-6 col-sm-6 col-xs-12">
+        <select id="product" name="product" class="select2_single form-control col-md-7 col-xs-12" style="width:80% " required>
+          <optgroup label="Non-Package">
+            <option value="event bowling" selected>Event Lane</option>
+            <option value="event shoe">Event Shoe</option>
+          </optgroup>
+          <optgroup label="Package">
+            <option value="event basic packages">Basic Packages</option>
+          </optgroup>
+        </select>
+      </div>
+    </div>
+    <div class="form-group">
+      <label class="control-label col-md-3 col-sm-3 col-xs-12" for="start">Date Range
+      </label>
+      <div class="col-md-3 col-sm-3 col-xs-12">
+          <input id="start" name="start" type="text" class="form-control datepicker" placeholder="Start Date MM/DD/YY" data-inputmask="'mask': '99/99/99'">
+      </div>
+      <div class="col-md-3 col-sm-3 col-xs-12">
+        <input id="end" name="end" type="text" class="form-control datepicker" placeholder="End Date MM/DD/YY" data-inputmask="'mask': '99/99/99'">
+      </div>
+    </div>
+    <div class="form-group" id="form-input-DOW">
+      <label class="control-label col-md-3 col-sm-3 col-xs-12" for="DOW">Day of Week
+      </label>
+      <div class="col-md-6 col-sm-6 col-xs-12">
+        <select id="DOW" name="DOW" multiple="multiple" class="select2_multiple form-control col-md-7 col-xs-12" style="width:80% ">
+          <optgroup label="Weekday">
+            <option value="mon">Monday</option>
+            <option value="tue">Tuesday</option>
+            <option value="wed">Wednesday</option>
+            <option value="thu">Thursday</option>
+          </optgroup>
+          <optgroup label="Weekend">
+            <option value="fri">Friday</option>
+            <option value="sat">Saturday</option>
+            <option value="sun">Sunday</option>
+          </optgroup>
+        </select>
+      </div>
+    </div>
+
+    <div id="EventPricingPanel2Form1a">
+      {% include 'EventPricing/EventPricingPanel2Form1a.html' %}
+    </div>
+    <div id="EventPricingPanel2Form1b" hidden>
+      {% include 'EventPricing/EventPricingPanel2Form1b.html' %}
+    </div>
+    <div id="EventPricingPanel2Form1c" hidden>
+      {% include 'EventPricing/EventPricingPanel2Form1c.html' %}
+    </div>
+    <div id="EventPricingPanel2Form1d" hidden>
+      {% include 'EventPricing/EventPricingPanel2Form1d.html' %}
+    </div>
+
+    <div class="form-group">
+      <label class="control-label col-md-3 col-sm-3 col-xs-12"></label>
+      <div class="col-md-6 col-sm-6 col-xs-12">
+        <button type="submit" class="btn btn-primary " id="EventPricingPanel2Form1Submit">Save</button>
+      </div>
+    </div>
+  </form>
+  <script>
+      var csrf_token = "{{ csrf_token }}"
+  </script>

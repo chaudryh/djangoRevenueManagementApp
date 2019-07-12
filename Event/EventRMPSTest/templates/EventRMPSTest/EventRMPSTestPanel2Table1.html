@@ -1,0 +1,65 @@
+{% load static %}
+
+<link rel="stylesheet" href="{% static 'bootstrap-table/dist/bootstrap-table.min.css' %}">
+<link rel="stylesheet" href="{% static 'x-editable/bootstrap3-editable/css/bootstrap-editable.css' %}">
+<link rel="stylesheet" href="{% static 'bootstrap-table/src/extensions/group-by-v2/bootstrap-table-group-by.css' %}">
+
+
+<div class="table-container" id="EventRMPSTestPanel2Table1ContainerId">
+    <table id="EventRMPSTestPanel2Table1Id"></table>
+</div>
+
+<style>
+    .detail{
+        display: table-cell;
+    }
+
+    .price{
+
+    }
+
+    .table>tbody>tr>td, table>tbody>tr>th, table>tfoot>tr>td, table>tfoot>tr>th, table>thead>tr>td, table>thead>tr>th {
+        padding: 0px;
+        line-height: 1;
+        vertical-align: middle;
+        border-top: 1px solid #ddd;
+        margin-bottom:0px;
+        font-size: 1em;
+        width: 200px;
+
+
+    }
+
+    .fixed-table-container tbody td .th-inner, .fixed-table-container thead th .th-inner {
+        padding: 0px;
+        line-height: 1;
+        vertical-align: middle;
+        overflow: hidden;
+        text-overflow: ellipsis;
+        white-space: pre-wrap;
+        margin-bottom:0px;
+        text-align: center;
+        {#width: 100px;   {# cONTROLS COLUMN WIDTH #}
+
+    }
+    .bootstrap-table .table>thead>tr>th {
+        vertical-align: middle;
+        border-bottom: 2px solid #ddd;
+        width: 200px;
+    }
+
+    .bootstrap-table .table thead>tr>th {
+        padding: 5px;
+        margin: 0;
+        line-height: 1;
+        {#border-bottom: 0px;#}
+    }
+
+    table>thead>tr>th .fht-cell, .fht-cell input {
+        min-height: 0px;
+    }
+
+    fht-cell, fht-cell input {
+        min-height: 20px;
+    }
+</style>

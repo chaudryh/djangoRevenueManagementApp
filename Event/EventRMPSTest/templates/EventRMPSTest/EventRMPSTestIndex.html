@@ -1,0 +1,44 @@
+{% extends 'bowlero_backend/dashboard_base.html' %}
+{% load static %}
+
+{% block content_dashboard %}
+{#<div class="row">#}
+{#  {% include 'EventRMPS/EventRMPSTestPanel1.html' %}#}
+{#</div>#}
+{#<div class="row">#}
+{#  {% include 'EventRMPS/EventRMPSTestPanel2.html' %}#}
+{#</div>#}
+
+<div class="col-md-12 col-sm-12 col-xs-12">
+  <div class="x_panel">
+    <div class="x_content">
+        <div>
+          {% include 'EventRMPSTest/EventRMPSTestPanel1.html' %}
+        </div>
+        <div>
+          {% include 'EventRMPSTest/EventRMPSTestPanel2Table1.html' %}
+        </div>
+        <br/>
+    </div>
+  </div>
+
+    <div class="x_panel">
+        <div>
+          {% include 'EventRMPSTest/EventRMPSTestPanel3.html' %}
+        </div>
+    </div>
+
+</div>
+<div class="clearfix"></div>
+
+
+{% endblock content_dashboard %}
+
+{% block foot_js_dashboard %}
+    <script type="text/javascript">
+      require(["{% static 'requirejs/config.js' %}?version={{ VERSION }}"], function (config) {
+        require(["{% static 'EventRMPSTest/js/EventRMPSTest.js' %}?version={{ VERSION }}"],function(){
+        })
+      });
+    </script>
+{% endblock foot_js_dashboard %}
