@@ -1,0 +1,247 @@
+{% extends 'bowlero_backend/base.html' %}
+{% load static %}
+{# Head #}
+{% block title %}Bowlero RM{% endblock title %}
+
+{% block head_css %}
+
+    <link href="{% static 'bootstrap-datepicker/dist/css/bootstrap-datepicker.min.css'%}" rel="stylesheet">
+{#    <link href="https://cdnjs.cloudflare.com/ajax/libs/select2/4.0.3/css/select2.min.css" rel="stylesheet" />#}
+    <link href="{% static 'gentelella/vendors/select2/dist/css/select2.min.css' %}" rel="stylesheet" />
+    <link href="{% static 'bootstrap-fileinput/css/fileinput.min.css' %}" rel="stylesheet">
+    <link href="{% static 'fullcalendar/fullcalendar.min.css'%}" rel="stylesheet">
+    <link href="{% static 'fullcalendar/fullcalendar.print.min.css'%}" rel="stylesheet" media='print'/>
+{#    <link href="{% static 'fullcalendar-scheduler/scheduler.css'%}" rel="stylesheet">#}
+    <link href="{% static 'qTip2/dist/jquery.qtip.min.css'%}" rel="stylesheet">
+    <link href="{% static 'gentelella/vendors/pnotify/dist/pnotify.css'%}" rel="stylesheet">
+    <link href="{% static 'gentelella/vendors/pnotify/dist/pnotify.buttons.css'%}" rel="stylesheet">
+    <link href="{% static 'gentelella/vendors/pnotify/dist/pnotify.nonblock.css'%}" rel="stylesheet">
+    <link href="{% static 'gentelella/vendors/nprogress/nprogress.css'%}" rel="stylesheet">
+    <link href="{% static 'gentelella/vendors/bootstrap-progressbar/css/bootstrap-progressbar-3.3.4.min.css'%}" rel="stylesheet">
+{#    <link href="{% static 'Highcharts/code/css/highcharts.css' %}" rel="stylesheet" />#}
+
+    {# Custom Theme Style #}
+    <link href="{% static 'gentelella/build/css/custom.min.css'%}" rel="stylesheet">
+    <link href="{% static 'bowlero_backend/css/custom.css' %}" rel="stylesheet">
+
+    {% block head_css_dashboard %}{% endblock head_css_dashboard%}
+{% endblock head_css%}
+
+{% block body_attr %}class="nav-md"{% endblock body_attr %}
+
+{# Body #}
+{% block content %}
+<div class="container body">
+  <div class="main_container">
+    {% block nav %}
+    <div class="top_nav">
+      <div class="nav_menu">
+        <nav>
+          <div class="nav toggle">
+            <a id="menu_toggle"><i class="fa fa-bars"></i></a>
+          </div>
+          <ul class="nav navbar-nav navbar-right">
+            <li class="">
+              <a href="javascript:" class="user-profile dropdown-toggle" data-toggle="dropdown" aria-expanded="false">
+                <img src="{% static 'bowlero_backend/bowlero_logo.png' %}" alt="">{{ request.user.username }}
+                <span class=" fa fa-angle-down"></span>
+              </a>
+              <ul class="dropdown-menu dropdown-usermenu pull-right">
+                <li><a href="{% url 'logout' %}"><i class="fa fa-sign-out pull-right"></i> Log Out</a></li>
+              </ul>
+            </li>
+          </ul>
+        </nav>
+      </div>
+    </div>
+    {% endblock nav%}
+    {% block sidebar %}
+    <div class="col-md-3 left_col">
+      <div class="left_col scroll-view">
+        <div class="navbar nav_title" style="border: 0;">
+          <a href="/" class="site_title"><span class="central">Bowlero RM</span></a>
+        </div>
+
+        <div class="clearfix"></div>
+
+        <!-- menu profile quick info -->
+        <div class="profile clearfix">
+          <div class="profile_pic">
+            <img src="{% static 'bowlero_backend/bowlero_logo.png' %}" alt="..." class="img-circle profile_img">
+          </div>
+          <div class="profile_info">
+            <span>Welcome,</span>
+            <h2>{{ request.user.first_name }}</h2>
+          </div>
+        </div>
+        <!-- /menu profile quick info -->
+
+        <br />
+
+        <!-- sidebar menu -->
+        <div id="sidebar-menu" class="main_menu_side hidden-print main_menu">
+          <div class="menu_section">
+            <h3>General</h3>
+            <ul class="nav side-menu">
+{#              <li><a><i class="fa fa-home"></i> Overview <span class="fa fa-chevron-down"></span></a>#}
+{#                <ul class="nav child_menu">#}
+{#                  <li><a href="/overview/overview/"  id="overview">Overview</a></li>#}
+{#                </ul>#}
+{#              </li>#}
+{#              {% if request.user.is_active %}#}
+{#              <li><a><i class="fa fa-globe"></i>Center Test<span class="fa fa-chevron-down"></span></a>#}
+{#                <ul class="nav child_menu">#}
+{#                  <li><a href="{% url 'RM_CenterTest_index'%}">Center Test Page</a></li>#}
+{#                </ul>#}
+{#              </li>#}
+{#              {% endif %}#}
+              {% if request.user.is_active %}
+              <li><a><i class="fa fa-globe"></i>Overview<span class="fa fa-chevron-down"></span></a>
+                <ul class="nav child_menu">
+                  <li><a href="{% url 'RM_Centers_index'%}">Centers</a></li>
+                  <li><a href="{% url 'RM_OpenHours_index'%}">Operating Hours</a></li>
+                  <li><a href="{% url 'RM_ProductOpt_index'%}">Product Opt In / Out</a></li>
+                  <li><a href="{% url 'Bundle_index'%}">Promos / Pkg Components</a></li>
+                  <li><a href="{% url 'RM_ProductSchedule_index'%}">Product Schedule</a></li>
+                  <li><a href="{% url 'RM_EventCalendar_index'%}">Holiday Calendar</a></li>
+                  <li><a href="{% url 'Weather_index'%}">Weather</a></li>
+                </ul>
+              </li>
+              {% endif %}
+              {% if request.user.is_active %}
+              <li><a><i class="fa fa-dot-circle-o"></i>Bowling & Shoe<span class="fa fa-chevron-down"></span></a>
+                <ul class="nav child_menu">
+                  <li><a href="{% url 'RM_Pricing_index'%}">Retail Bulk Price Rules</a></li>
+                  <li><a href="{% url 'RM_PricingTable_index'%}">Retail Price Table</a></li>
+{#                  <li><a href="{% url 'RM_PricingTier_index'%}">Retail Price Tier</a></li>#}
+                  <li><a href="{% url 'BowlingShoe_BSChangeReport_index'%}">Change Report</a></li>
+                </ul>
+              </li>
+              {% endif %}
+              {% if request.user.is_active %}
+              <li><a><i class="fa fa-leanpub"></i>Food<span class="fa fa-chevron-down"></span></a>
+                <ul class="nav child_menu">
+                  <li><a href="{% url 'RM_Food_index'%}">Food Menu Pricing</a></li>
+                  <li><a href="{% url 'Food_FoodByCenter_index'%}">Food Price By Center</a></li>
+                  <li><a href="{% url 'Food_FoodChangeReport_index'%}">Change Report</a></li>
+                </ul>
+              </li>
+              {% endif %}
+              {% if request.user.is_active %}
+{#              <li><a><i class="fa fa-beer"></i>Alcohol<span class="fa fa-chevron-down"></span></a>#}
+{#                <ul class="nav child_menu">#}
+{#                  <li><a href="{% url 'Alcohol_Alcohol_index'%}">Alcohol Products & Pricing</a></li>#}
+{#                  <li><a href="{% url 'Alcohol_AlcoholTier_index'%}">Alcohol Tier</a></li>#}
+{#                  <li><a href="{% url 'Alcohol_AlcoholChangeReport_index'%}">Change Report</a></li>#}
+{#                </ul>#}
+{#              </li>#}
+              {% endif %}
+              {% if request.user.is_active %}
+              <li><a><i class="fa fa-archive"></i>Event<span class="fa fa-chevron-down"></span></a>
+                <ul class="nav child_menu">
+{#                    <li><a href="{% url 'EventOverviewTest_index'%}">Event Overview Test</a></li>#}
+                  <li><a href="{% url 'EventOverview_index'%}">Event Overview</a></li>
+                  <li><a href="{% url 'EventPromo_index'%}">Event Promos</a></li>
+                  <li><a href="{% url 'EventAllocation_index'%}">Event Allocation</a></li>
+{#                  <li><a href="{% url 'EventRMPS_index'%}">Event RMPS</a></li>#}
+                    <li><a href="{% url 'EventRMPSTest_index'%}">Event RMPS</a></li>
+                  <li><a href="{% url 'EventChangeReport_index'%}">Change Report</a></li>
+                  <li><a href="{% url 'EventCenterTier_index'%}">Test Event Center Tier</a></li>
+                  <li><a href="{% url 'EventPricingTier_index'%}">Test Event Price Tier</a></li>
+                  <li><a href="{% url 'EventPriceByCenter_index'%}">Test Event Price By Center</a></li>
+                  <li><a href="{% url 'Event_Pricing_index'%}">Test Event Bulk Price Rules</a></li>
+                  <li><a href="{% url 'Event_PricingTable_index'%}">Test Event Price Table</a></li>
+{#                  <li><a href="{% url 'EventPriceByCenterTest_index'%}">Test Event Price By Center</a></li>#}
+{#                  <li><a href="{% url 'EventRMPSTest_index'%}">Event RMPS(Test)</a></li>#}
+                </ul>
+              </li>
+              {% endif %}
+              {% if request.user.is_active %}
+              <li><a><i class="fa fa-trophy"></i>League<span class="fa fa-chevron-down"></span></a>
+                <ul class="nav child_menu">
+                  <li><a href="{% url 'LeaguePricingSheet_index'%}">Pricing Threshold</a></li>
+                  <li><a href="{% url 'LeagueCenterInfo_index'%}">Data / Statistics</a></li>
+                </ul>
+              </li>
+              {% endif %}
+              {% if request.user.is_active %}
+              <li><a><i class="fa fa-edit"></i>Audit<span class="fa fa-chevron-down"></span></a>
+                <ul class="nav child_menu">
+                  <li><a href="{% url 'Audit_index'%}">Audit</a></li>
+                </ul>
+              </li>
+              {% endif %}
+              {% if request.user.is_active %}
+              <li><a><i class="fa fa-envelope"></i>Email<span class="fa fa-chevron-down"></span></a>
+                <ul class="nav child_menu">
+{#                  <li><a href="{% url 'EmailNotice_index'%}">Email Notice Config</a></li>#}
+                  <li><a href="{% url 'EmailNoticeLog_index'%}">Email Notice Log</a></li>
+                </ul>
+              </li>
+              {% endif %}
+            </ul>
+          </div>
+        </div> 
+        <!-- /sidebar menu -->
+
+
+        <!-- /menu footer buttons -->
+        <div class="sidebar-footer hidden-small">
+          <a data-toggle="tooltip" data-placement="top" title="Settings">
+            <span class="glyphicon glyphicon-cog" aria-hidden="true"></span>
+          </a>
+          <a data-toggle="tooltip" data-placement="top" title="FullScreen">
+            <span class="glyphicon glyphicon-fullscreen" aria-hidden="true"></span>
+          </a>
+          <a data-toggle="tooltip" data-placement="top" title="Lock">
+            <span class="glyphicon glyphicon-eye-close" aria-hidden="true"></span>
+          </a>
+          <a href="{% url 'logout' %}" data-toggle="tooltip" data-placement="top" title="Logout">
+            <span class="glyphicon glyphicon-off" aria-hidden="true"></span>
+          </a>
+        </div>
+        <!-- /menu footer buttons -->
+      </div>
+    </div>
+    {% endblock sidebar%}
+
+    <div class="right_col" role="main" style="min-height: 2259px;">
+        {% block content_dashboard %}{% endblock content_dashboard %}
+    </div>
+
+    {% block footer %}
+    <footer>
+      <div class="pull-right">
+        &copy; {% now "Y" %}  <a href="https://www.bowlerocorp.com/">Bowlero Corporation</a>
+      </div>
+      <div class="clearfix"></div>
+    </footer>
+    {% endblock footer%}
+  </div>
+</div>
+
+{# session timeout#}
+<script type="text/javascript" src="{% static 'gentelella/vendors/jquery/dist/jquery.min.js' %}"></script>
+{% include 'session_security/all.html' %}
+
+{% endblock content %}
+
+{% block foot_js %}
+
+{#    <!-- FastClick -->#}
+{#    <script src="{% static 'gentelella/vendors/fastclick/lib/fastclick.js' %}"></script>#}
+{#    <!-- NProgress -->#}
+{#    <script src="{% static 'gentelella/vendors/nprogress/nprogress.js' %}"></script>#}
+{#    <!-- Chart.js -->#}
+{#    <script src="{% static 'gentelella/vendors/Chart.js/dist/Chart.min.js' %}"></script>#}
+{#    <!-- gauge.js -->#}
+{#    <script src="{% static 'gentelella/vendors/gauge.js/dist/gauge.min.js' %}"></script>#}
+{#    <!-- bootstrap-progressbar -->#}
+{#    <script src="{% static 'gentelella/vendors/bootstrap-progressbar/bootstrap-progressbar.min.js' %}"></script>#}
+{#    <!-- iCheck -->#}
+{#    <script src="{% static 'gentelella/vendors/iCheck/icheck.min.js' %}"></script>#}
+{#    <!-- Skycons -->#}
+{#    <script src="{% static 'gentelella/vendors/skycons/skycons.js' %}"></script>#}
+
+    {% block foot_js_dashboard %}{% endblock foot_js_dashboard%}
+{% endblock foot_js%}

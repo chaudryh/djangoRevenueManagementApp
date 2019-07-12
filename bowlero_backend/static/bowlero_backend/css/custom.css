@@ -1,0 +1,31 @@
+div.progress {
+    position: relative;
+}
+
+.progress span {
+    position: absolute;
+    display: block;
+    width: 100%;
+    color: white;
+    font-weight: bold;
+    line-height: 20px;
+ }
+
+.progress-bar-yellow {
+  background-color: #eec700 !important;
+}
+.progress-bar-red {
+  background-color: red !important;
+}
+.progress-bar-green {
+  background-color: green !important;
+}
+.progress-bar-blue {
+  background-color: blue !important;
+}
+.progress-bar-tan {
+      background-color: tan !important;
+}
+.progress-bar-grey {
+      background-color: grey !important;
+}
