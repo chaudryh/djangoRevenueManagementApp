@@ -1,0 +1,91 @@
+@startuml
+
+title PnP UML
+
+Center "1"-"n" Price
+Center "1"-"n" ProductScedule
+Center "1"-"n" SpecialHour
+Center "1"-"n" Allocation
+Product "1"-"n" Price
+Product "1"-"n" ProductScedule
+Product "1"-"n" Allocation
+
+class Center {
+center_id: integer <PK>
+center_name: string
+sale_region: string NULL
+territory: string NULL
+status: bool
+}
+
+class Product {
+product_id: integer <PK>
+product_name: string
+product_display_name: string
+group: string
+status: bool
+is_package: bool
+start: datetime NULL
+end: datetime NULL
+}
+
+class ProductScedule {
+schedule_id: integer <PK> AUTO
+center_id: Center.center_id <FK>
+product_id: Product.product_id <FK>
+schedule: string CHOICE=Daily,Weekly,Monthly,Yearly
+day_of_week: string
+start_day_of_month: integer
+end_day_of_month: integer
+start_day_of_year: integer
+end_day_of_year: integer
+}
+
+class Allocation {
+id: integer <PK> AUTO
+center_id: Center.center_id <FK>
+parent_product_id: Product.product_id <FK>
+child_product_id: Product.product_id <FK>
+price: float NULL
+percent: float NULL
+}
+
+class Price {
+id: integer <PK> AUTO
+center_id: Center.center_id <FK>
+product_id: Product.product_id <FK>
+price: float NULL
+start: datetime NULL
+end: datetime NULL
+action_time: datetime
+}
+
+class SpecialHour {
+id: integer <PK> AUTO
+center_id: Center.center_id <FK>
+date: Date
+start_time: time
+end_time: time
+}
+
+
+@enduml
+
+Questions & Concerns:
+2. different product include for each center
+3. different product price for each allocation product
+4. everything by date
+5. most concern last price
+6. Package different price by day parts
+7. Using period/day part to define products
+
+1. In Gems, can you set a price for a future date?
+2. different prices for one day part
+3. packages have different price by day parts
+3. allocation by date
+4. day part by date
+5. ProductInclude by date
+
+Comments:
+1. Allocation auto by percent first when bulk price change products. Can change by dollar later.
+2. Recommend Excel upload for bulk update data(Price, Allocation etc)
